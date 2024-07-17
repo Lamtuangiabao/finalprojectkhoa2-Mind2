@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.para {
+  font-family: "Times New Roman", Times, "Franklin Gothic Medium",
+    "Arial Narrow", Arial, sans-serif;
+  user-select: none;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  font-size: xx-large;
+  border-right: 1px solid red;
+  /* //giống như gap */
+  margin-inline: auto;
+  /* //dấu chữ xài hidden */
+  overflow: hidden;
+  /* //giữ nó ở trên một dòng */
+  white-space: nowrap;
+  animation: type 3s steps(5) forwards, blink 0.5s infinite;
+}
+
+@keyframes type {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  5% {
+    border-color: transparent;
+  }
+  /* //Lưu ý:không phải giá trị 0 hay 100 thì chỉ càn là giá trị giữa(1-99) thì nó sẽ làm suốt khoảng thời gian xảy ra */
+}
+
+.container {
+  /* //cái này của scroll */
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  /* //cái này của scroll */
+  height: 100vh;
+  width: 100vw;
+}
+
+.one {
+  /* //để custom vị trí nội dung */
+  height: 100vh;
+  /* background-color: black; //Tại sao set background mặc định ở đây trong .one thì không set điều kiện cho inline style được,xử lý là đặt điều kiện trực tiếp cho style trên thẻ div luôn */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* //ở dưới của scroll */
+  scroll-snap-align: start;
+}
+
+.two {
+  margin: auto;
+  background-color: black;
+  width: 50%;
+  height: 100vh;
+  /* //ở dưới của scroll */
+  scroll-snap-align: start;
+}
+
+.title {
+  user-select: none;
+  letter-spacing: 3px;
+  margin-left: 30%;
+  color: lightblue;
+  font-weight: bolder;
+  font-size: xx-large;
+  font-family: "Times New Roman", Times, "Franklin Gothic Medium",
+    "Arial Narrow", Arial, sans-serif;
+}
+
+.carousel {
+  padding-top: 1%;
+  /* border: 1px solid red; */
+  height: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: 80%;
+  margin-inline: auto;
+  object-fit: contain;
+  border-radius: 25%;
+  box-shadow: 1px 3px 3px 5px aquamarine;
+  /* border: 1px solid red; */
+}
+.carousel img:hover {
+  box-shadow: 1px 3px 5px 5px black;
+  cursor: pointer;
+}
+.caption {
+  user-select: none;
+  letter-spacing: 3px;
+  font-size: xx-large;
+  /* color: darkgray; */
+  font-weight: bold;
+  font-size: xx-large;
+  font-family: "Times New Roman", Times, "Franklin Gothic Medium",
+    "Arial Narrow", Arial, sans-serif;
+}
+
+.page {
+  background-color: rgb(250, 235, 215, 0.4);
+  left: 0.2%;
+  position: absolute;
+  top: 4.6%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.page:hover {
+  box-shadow: 2px 3px 4px aquamarine;
+  height: 50%;
+}
+
+.page button:hover {
+  box-shadow: 2px 3px 4px aquamarine;
+}
+
+.page button {
+  background-color: rgb(250, 235, 215, 0.8);
+  border: 5px solid black;
+  color: grey;
+  font-weight: bold;
+}

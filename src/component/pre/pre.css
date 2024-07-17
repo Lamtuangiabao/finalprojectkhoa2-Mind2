@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #121212;
+}
+.Bubble {
+  display: flex;
+  gap: 28%;
+  height: 100vh;
+}
+.pan {
+  width: 15%;
+  height: 2%;
+  background-color: white;
+  border-radius: 25px;
+  animation: bubble 15s linear infinite;
+  box-shadow: 0 5px 7px 10px white, 0 0 70px yellow;
+  animation-duration: calc(80s / var(--i));
+}
+.pan:nth-child(even) {
+  background-color: aquamarine;
+  animation-delay: 0.9s;
+  box-shadow: 0 3px 5px 10px aquamarine, 0 0 70px rgb(231, 196, 151);
+}
+@keyframes bubble {
+  0% {
+    transform: translateY(0vh) scale(0);
+  }
+  100% {
+    transform: translateY(100vh) scale(1);
+  }
+}
+
+.Username {
+  position: absolute;
+  width: 30%;
+  height: 12%;
+  left: 34%;
+  top: 40%;
+  border-radius: 50px;
+  outline: none;
+  border-width: 5%;
+  padding-left: 5%;
+  font-size: 260%;
+  color: blueviolet;
+  box-shadow: 4px 6px 8px 9px black;
+  background-color: rgb(18, 18, 18, 0.4);
+}
+
+.label {
+  background-color: rgb(18, 18, 18, 0.4);
+  width: 8.5%;
+  color: aquamarine;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 140%;
+  font-weight: bold;
+  position: absolute;
+  left: 37%;
+  top: 43.5%;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 25px;
+  transition: 0.25s ease;
+  /* border-color: aquamarine; */
+}
+/* // dấu + là cộng hưởng các class lại khi có một sự kiện gì xảy ra */
+.Username:not(:placeholder-shown) + .label,
+.Username:focus + .label {
+  transition: 0.25s ease;
+  color: aqua;
+  padding-left: 0.2%;
+  top: 38%;
+  background-color: rgb(18, 18, 18, 0.4);
+  width: 9%;
+}
+
+.Username:focus {
+  border-color: aquamarine;
+}
+
+#confirm {
+  width: fit-content;
+  color: aquamarine;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 140%;
+  font-weight: bold;
+  position: absolute;
+  left: 37.8%;
+  top: 38%;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 25px;
+  transition: 0.25s ease;
+  background-color: rgb(18, 18, 18, 0.4);
+}
+
+#confirm1 {
+  width: fit-content;
+  color: aquamarine;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 140%;
+  font-weight: bold;
+  position: absolute;
+  left: 42%;
+  top: 38.2%;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 25px;
+  transition: 0.25s ease;
+  background-color: rgb(18, 18, 18, 0.4);
+}
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+#confirm:hover {
+  transform: translateY(20%);
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+.section {
+  width: 100%;
+  height: 100vh;
+}
